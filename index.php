@@ -15,7 +15,7 @@ include("connection.php");
 
 <div id="form">
    <h1>Login Form</h1> 
-   <Form name="form" method="POST">
+   <Form name="form" action="login.php" onsubmit="return isvalid()"  method="POST">
     <label>Username: </label>
     <input type="text" id="user" name="user"><br><br>
     <label>Password</label>
@@ -24,6 +24,24 @@ include("connection.php");
 
 </form>
 </div>
-
+<script>
+            function isvalid(){
+                var user = document.form.user.value;
+                var pass = document.form.pass.value;
+                if(user.length=="" && pass.length==""){
+                    alert(" Username and password field is empty!!!");
+                    return false;
+                }
+                else if(user.length==""){
+                    alert(" Username field is empty!!!");
+                    return false;
+                }
+                else if(pass.length==""){
+                    alert(" Password field is empty!!!");
+                    return false;
+                }
+                
+            }
+        </script>
 </body>
 </html>
