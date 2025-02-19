@@ -8,7 +8,7 @@ include("connection.php");
         $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
         $count = mysqli_num_rows($result);
         if($count == 1){  
-            header("Location: welcom.php");
+            header("Location: welcome.php");
         }  
         else{  
             echo  '<script>
